@@ -4,14 +4,17 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		//レッツクッキング♪
+		//普通のハンバーガーを作ろう！
 		makeHamburger();
 		System.out.println("\n---------------------------------------\n");
+		//ヘルシーなハンバーガーを作ろう！
 		makeHealthyHamburger();
 		System.out.println("\n---------------------------------------\n");
+		//デラックスなハンバーガーを作ろう！
 		makeDeluxeBurger();
 		
 	}
-	
 	public static void makeHamburger() {
 	
 		Hamburger hamburger = new Hamburger("ベーシック", "ソーセージ", 350, "レギュラー");
@@ -21,7 +24,7 @@ public class Main {
 		hamburger.addTopping("レタス", 75);
 		hamburger.addTopping("チーズ", 100);
 		hamburger.itemizeBurger();
-		hamburger.showBurgersTopping();
+		hamburger.showBurgerToppings();
 		
 	}
 	
@@ -38,7 +41,7 @@ public class Main {
 		healthyHamburger.addHealthyTopping("アボカド", 80);
 		healthyHamburger.addHealthyTopping("ゴマ", 30);
 		healthyHamburger.itemizeBurger();
-		healthyHamburger.showBurgersTopping();
+		healthyHamburger.showBurgerToppings();
 	}
 	
 	public static void makeDeluxeBurger() {
@@ -46,6 +49,6 @@ public class Main {
 		DeluxeBurger deluxeBurger = new DeluxeBurger("デラックス", "ベーコン＆ソーセージ", 1000, "バンズ＆クラブ");
 		
 		deluxeBurger.baseBurger();
-		deluxeBurger.showBurgersTopping();
+		deluxeBurger.showBurgerToppings();
 	}
 }

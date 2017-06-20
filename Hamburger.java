@@ -3,24 +3,24 @@ package hamburger;
 public class Hamburger {
 	
 	private String    name;                 //バーガーの名前       
-	private String    typesOfMeat;          //肉の種類
+	private String    meatType;             //肉の種類
 	private int        basePrice;           //初期の値段
-	private String    typesOfBuns;          //バンズの種類   
-	private Topping[] burgersTopping;      //トッピング内容
-	private int        numberOfTopping;     //現在のトッピング数
+	private String    bunsType;            //バンズの種類   
+	private Topping[] burgerToppings;      //トッピング内容
+	private int        toppingNum;          //現在のトッピング数
 	private int        totalPrice;          //バーガー全体の値段
 	private final int MAXIMUM_TOPPING = 4; //トッピングの最大数
 	
 	//ハンバーガーのコンストラクタ
-	public Hamburger(String name, String typesOfMeat, int basePrice, String typesOfBuns) {
+	public Hamburger(String name, String meatType, int basePrice, String bunsType) {
 		super();
-		this.name             = name;
-		this.typesOfMeat      = typesOfMeat;
-		this.basePrice        = basePrice;
-		this.typesOfBuns      = typesOfBuns;
-		this.burgersTopping   = new Topping[MAXIMUM_TOPPING]; //トッピングの最大数分、配列を用意
-		this.numberOfTopping  = 0;
-		this.totalPrice       = basePrice;
+		this.name           = name;
+		this.meatType       = meatType;
+		this.basePrice      = basePrice;
+		this.bunsType       = bunsType;
+		this.burgerToppings = new Topping[MAXIMUM_TOPPING]; //トッピングの最大数分、配列を用意
+		this.toppingNum     = 0;
+		this.totalPrice     = basePrice;
 	}
 	
 	//トッピング追加
@@ -31,17 +31,17 @@ public class Hamburger {
 		}else{
 			//引数からトッピングをインスタンス化し、トッピング配列に格納する
 			Topping topping = new Topping(name, basePrice);
-			this.burgersTopping[numberOfTopping] = topping;
+			this.burgerToppings[toppingNum] = topping;
 			//トッピングの金額をバーガーの総合代金にプラス
 			this.totalPrice += basePrice; 
 			System.out.println(name + "を" + basePrice + "円で加えます。");
-			this.numberOfTopping++;
+			this.toppingNum++;
 		}
 	}
 	
 	//初期のバーガーの設定
 	public void baseBurger(){
-		System.out.println("「" + this.typesOfBuns + "」バンズと「" + this.typesOfMeat +
+		System.out.println("「" + this.bunsType + "」バンズと「" + this.meatType +
 				"」からなる、「" + this.name + "」ハンバーガーの値段は、" + this.basePrice + "円です。");
 	}
 	
@@ -51,7 +51,7 @@ public class Hamburger {
 	}
 	
 	//バーガーのトッピング内容表示
-	public void showBurgersTopping(){
+	public void showBurgerToppings(){
 		
 		int toppingCount = 0; //ループカウンター
 		
@@ -59,8 +59,9 @@ public class Hamburger {
 		//カウンターが現在のトッピング数と同じになれば終了する
 		while(ToppingsNumIsCounter(toppingCount)){
 			//トッピング配列内のトッピングオブジェクトのgetterを呼び出し、結果を定数に格納
-			final String toppingName = this.burgersTopping[toppingCount].getName();
-			final int     toppingPrice = this.burgersTopping[toppingCount].getPrice();
+			final String toppingName = this.burgerToppings[toppingCount].getName();
+			final int     toppingPrice = this.burgerToppings[toppingCount].getPrice();
+			
 			System.out.println("トッピング:" + toppingName + " " + toppingPrice + "円");
 			toppingCount++;
 		}
@@ -68,12 +69,12 @@ public class Hamburger {
 	
 	//addToppingのif文の条件式の結果を返すメソッド
 	public boolean moreThan4Toppings() {
-		return numberOfTopping >= MAXIMUM_TOPPING;
+		return toppingNum >= MAXIMUM_TOPPING;
 	}
 	
-	//showBurgersToppingのwhile文の条件式の結果を返すメソッド
+	//showburgerToppingsのwhile文の条件式の結果を返すメソッド
 	public boolean ToppingsNumIsCounter(int toppingCount) {
-		return toppingCount < numberOfTopping;
+		return toppingCount < toppingNum;
 	}
 	
 	public void setTotalPrice(int totalbasePrice) {
