@@ -41,8 +41,8 @@ public class Hamburger {
 	
 	//初期のバーガーの設定
 	public void baseBurger(){
-		System.out.println(this.typesOfBuns + "バンズと" + this.typesOfMeat + "からなる" 
-				+ this.name + "ハンバーガーの値段は、" + this.basePrice + "円です。");
+		System.out.println("「" + this.typesOfBuns + "」バンズと「" + this.typesOfMeat +
+				"」からなる、「" + this.name + "」ハンバーガーの値段は、" + this.basePrice + "円です。");
 	}
 	
 	//バーガーの総合値段
