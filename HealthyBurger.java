@@ -1,9 +1,9 @@
-package hamburger;
+﻿package hamburger;
 
 public class HealthyBurger extends Hamburger{
 	
-	private Topping[] healthyTopping;               //ヘルシートッピングの内容
-	private int        healthyToppingNum;           //ヘルシートッピング数
+	private Topping[] healthyTopping;              //ヘルシートッピングの内容
+	private int        healthyToppingNum;          //ヘルシートッピング数
 	private final int MAXIMUM_HEALTHY_TOPPING = 2; //ヘルシートッピングの最大数
 	
 	//ヘルシーバーガーのコンストラクタ

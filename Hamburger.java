@@ -1,14 +1,14 @@
-package hamburger;
+﻿package hamburger;
 
 public class Hamburger {
 	
-	private String    name;                 //バーガーの名前       
-	private String    meatType;             //肉の種類
-	private int        basePrice;           //初期の値段
+	private String    name;                //バーガーの名前       
+	private String    meatType;            //肉の種類
+	private int       basePrice;           //初期の値段
 	private String    bunsType;            //バンズの種類   
 	private Topping[] burgerToppings;      //トッピング内容
-	private int        toppingNum;          //現在のトッピング数
-	private int        totalPrice;          //バーガー全体の値段
+	private int       toppingNum;          //現在のトッピング数
+	private int       totalPrice;          //バーガー全体の値段
 	private final int MAXIMUM_TOPPING = 4; //トッピングの最大数
 	
 	//ハンバーガーのコンストラクタ
@@ -35,6 +35,7 @@ public class Hamburger {
 			//トッピングの金額をバーガーの総合代金にプラス
 			this.totalPrice += basePrice; 
 			System.out.println(name + "を" + basePrice + "円で加えます。");
+			//トッピングされたので、toppingNumをインクリメントする
 			this.toppingNum++;
 		}
 	}

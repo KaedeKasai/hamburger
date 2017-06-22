@@ -1,5 +1,20 @@
 package hamburger;
 
+/*
+ * 
+ * ----- オブジェクト指向を使い、色んなハンバーガーを作ってみよう！ -----
+ * 
+ * 
+ * 大まかな内容について
+ * 
+ * ハンバーガーは「名前」、「肉の種類」、「肉とバンズの値段」、「バンズの種類」の値を受け取ってインスタンス化される
+ * 他には、トッピングが四つまで付け足すことができ、ハンバーガーのまとめた値段を表示したり、トッピングの内容を表示するメソッドなどがある。
+ * 
+ * ヘルシーハンバーガーは、ハンバーガーを継承していて、新たにヘルシートッピングを二つ追加できる。
+ * デラックスハンバーガーは、ハンバーガーを継承していて、トッピングとしてポテトとドリンクが自動追加され、それ以外のトッピングはできない。
+ * 
+ */
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -20,7 +35,7 @@ public class Main {
 		Hamburger hamburger = new Hamburger("ベーシック", "ソーセージ", 350, "レギュラー");
 		
 		hamburger.baseBurger();
-		hamburger.addTopping("トマト", 30);
+		hamburger.addTopping("トマト", 30); //トッピングの名前と値段を引数にする
 		hamburger.addTopping("レタス", 75);
 		hamburger.addTopping("チーズ", 100);
 		hamburger.itemizeBurger();
